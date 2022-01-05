@@ -41,3 +41,14 @@ npm run lint
 # 代码格式检查并自动修复
 npm run lint -- --fix
 ```
+
+
+
+```
+http://localhost:9528/api/user/login
+{"code":20000,"data":{"token":"admin-token"}}
+http://localhost:9528/api/user/info?token=admin-token
+{"code":20000,"data":{"roles":["admin"],"introduction":"I am a super administrator","avatar":"https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif","name":"Super Admin"}}
+
+
+```

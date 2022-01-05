@@ -70,7 +70,7 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '111111'
+        password: 'admin123'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -105,9 +105,11 @@ export default {
         if (valid) {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm).then(() => {
+            console.log('login success')
             this.$router.push({ path: this.redirect || '/' })
             this.loading = false
-          }).catch(() => {
+          }).catch(e => {
+            console.log('login fail:' + e)
             this.loading = false
           })
         } else {
@@ -218,6 +220,7 @@ $light_gray:#eee;
       font-weight: bold;
     }
   }
+
 
   .show-pwd {
     position: absolute;
