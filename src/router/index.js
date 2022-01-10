@@ -54,11 +54,28 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
+  {
+    path: '/hks',
+    component: Layout,
+    redirect: '/hks/index',
+    name: 'hks',
+    meta: { title: 'hks', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'index',
+        name: 'hgt',
+        component: () => import('@/views/hks/index'),
+        meta: { title: 'hks', icon: 'table' }
+      },
+    ]
+  },
 
+ 
   {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
+    hidden: true,
     name: 'Example',
     meta: { title: 'Example', icon: 'el-icon-s-help' },
     children: [
@@ -80,6 +97,8 @@ export const constantRoutes = [
   {
     path: '/form',
     component: Layout,
+    redirect: '/form/index',
+    hidden: true,
     children: [
       {
         path: 'index',
