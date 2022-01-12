@@ -69,7 +69,21 @@ export const constantRoutes = [
       },
     ]
   },
-
+  {
+    path: '/select',
+    component: Layout,
+    redirect: '/select/active',
+    name: 'select',
+    meta: { title: 'select', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'active',
+        name: 'active',
+        component: () => import('@/views/select/active'),
+        meta: { title: 'active', icon: 'table' }
+      },
+    ]
+  },
  
   {
     path: '/example',
